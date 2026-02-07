@@ -1,0 +1,56 @@
+# أوامر الرفع على GitHub لحساب info-afk4
+
+## الطريقة 1: Repository جديد (qudrat-app)
+
+# افتح Terminal/CMD في مجلد qudrat-app ثم:
+
+cd C:\Users\haith\qudrat-app
+
+git branch -M main
+
+git remote add origin https://github.com/info-afk4/qudrat-app.git
+
+git push -u origin main
+
+
+## بعد الرفع، فعّل GitHub Pages:
+
+1. اذهب إلى: https://github.com/info-afk4/qudrat-app/settings/pages
+2. Source: اختر "main" branch
+3. Folder: "/" (root)
+4. Save
+
+الرابط المباشر سيكون:
+https://info-afk4.github.io/qudrat-app
+
+
+═══════════════════════════════════════════════════════
+
+## الطريقة 2: إضافة على Repository موجود (training)
+
+cd C:\Users\haith\qudrat-app
+
+git branch -M main
+
+git remote add origin https://github.com/info-afk4/training.git
+
+git push -u origin main
+
+
+الرابط المباشر سيكون:
+https://info-afk4.github.io/training
+
+
+═══════════════════════════════════════════════════════
+
+## ملاحظة مهمة:
+
+عند Push، سيطلب منك:
+- Username: info-afk4
+- Password: استخدم Personal Access Token (ليس كلمة المرور!)
+
+احصل على Token من:
+https://github.com/settings/tokens/new
+
+Scopes المطلوبة:
+✅ repo (كل الخيارات)
