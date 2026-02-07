@@ -1,0 +1,87 @@
+{
+  "name": "دليل القدرات - يمناك",
+  "short_name": "دليل القدرات",
+  "description": "دليل شامل لاختبار القدرات العامة - مراجعة سريعة وسهلة",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f5ab4a",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "assets/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "القسم اللفظي",
+      "short_name": "لفظي",
+      "description": "مراجعة القسم اللفظي",
+      "url": "/index.html#verbal",
+      "icons": [{ "src": "assets/icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "القسم الكمي",
+      "short_name": "كمي",
+      "description": "مراجعة القسم الكمي",
+      "url": "/index.html#quantitative",
+      "icons": [{ "src": "assets/icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "المفضلة",
+      "short_name": "مفضلة",
+      "description": "القوانين المحفوظة",
+      "url": "/index.html#bookmarks",
+      "icons": [{ "src": "assets/icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}

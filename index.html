@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="دليل شامل لاختبار القدرات العامة - مراجعة سريعة وسهلة">
+    <meta name="theme-color" content="#f5ab4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>دليل القدرات | يمناك</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1 class="app-title">🎯 دليل القدرات</h1>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="بحث">🔍</button>
+                <button class="icon-btn" id="darkModeBtn" aria-label="الوضع الليلي">🌙</button>
+            </div>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="searchContainer" style="display: none;">
+            <input type="text" id="searchInput" placeholder="ابحث في القوانين والاختصارات..." autocomplete="off">
+            <button class="search-close" id="searchCloseBtn">✕</button>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-results" id="searchResults" style="display: none;"></div>
+    </header>
+
+    <!-- Sidebar Navigation (Desktop) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>الأقسام</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home" class="nav-item active" data-section="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">الرئيسية</span>
+            </a>
+            <a href="#verbal" class="nav-item" data-section="verbal">
+                <span class="nav-icon">📖</span>
+                <span class="nav-text">القسم اللفظي</span>
+            </a>
+            <a href="#quantitative" class="nav-item" data-section="quantitative">
+                <span class="nav-icon">🔢</span>
+                <span class="nav-text">القسم الكمي</span>
+            </a>
+            <a href="#geometry" class="nav-item" data-section="geometry">
+                <span class="nav-icon">📐</span>
+                <span class="nav-text">الهندسة</span>
+            </a>
+            <a href="#algebra" class="nav-item" data-section="algebra">
+                <span class="nav-icon">🧮</span>
+                <span class="nav-text">الجبر</span>
+            </a>
+            <a href="#strategies" class="nav-item" data-section="strategies">
+                <span class="nav-icon">⚡</span>
+                <span class="nav-text">استراتيجيات النجاح</span>
+            </a>
+            <a href="#bookmarks" class="nav-item" data-section="bookmarks">
+                <span class="nav-icon">⭐</span>
+                <span class="nav-text">المفضلة</span>
+                <span class="badge" id="bookmarkCount">0</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>إعداد: يمناك</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Content will be loaded dynamically -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>جاري التحميل...</p>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" id="bottomNav">
+        <a href="#home" class="bottom-nav-item active" data-section="home">
+            <span class="bottom-nav-icon">🏠</span>
+            <span class="bottom-nav-text">الرئيسية</span>
+        </a>
+        <a href="#verbal" class="bottom-nav-item" data-section="verbal">
+            <span class="bottom-nav-icon">📖</span>
+            <span class="bottom-nav-text">لفظي</span>
+        </a>
+        <a href="#quantitative" class="bottom-nav-item" data-section="quantitative">
+            <span class="bottom-nav-icon">🔢</span>
+            <span class="bottom-nav-text">كمي</span>
+        </a>
+        <a href="#geometry" class="bottom-nav-item" data-section="geometry">
+            <span class="bottom-nav-icon">📐</span>
+            <span class="bottom-nav-text">هندسة</span>
+        </a>
+        <a href="#more" class="bottom-nav-item" data-section="more">
+            <span class="bottom-nav-icon">☰</span>
+            <span class="bottom-nav-text">المزيد</span>
+        </a>
+    </nav>
+
+    <!-- Overlay for sidebar on mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/bookmarks.js"></script>
+
+    <!-- PWA Installation -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+    </script>
+</body>
+</html>
