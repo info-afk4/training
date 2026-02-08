@@ -1110,7 +1110,7 @@ const App = {
             </div>`;
     },
 
-    setupSectionInteractions() { Bookmarks.updateAllButtons(); SvgEditor.loadSaved(); },
+    setupSectionInteractions() { Bookmarks.updateAllButtons(); SvgEditor.loadFromGitHub(); },
     toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); },
     closeSidebar() { document.getElementById('sidebar').classList.remove('active'); document.getElementById('overlay').classList.remove('active'); },
     toggleDarkMode() {
@@ -1450,6 +1450,10 @@ const SvgEditor = {
         // حفظ تلقائي عند كل تعديل
         if (this.currentId) {
             localStorage.setItem('svg-' + this.currentId, code);
+            // حفظ في GitHub تلقائياً (مع تأخير لتجنب طلبات كثيرة)
+            this._pendingSave = this.currentId;
+            clearTimeout(this._saveTimer);
+            this._saveTimer = setTimeout(() => this.saveToGitHub(this._pendingSave, code), 2000);
             const container = document.querySelector(`[data-svg-id="${this.currentId}"]`);
             if (container) {
                 const oldSvg = container.querySelector('svg');
@@ -1460,6 +1464,38 @@ const SvgEditor = {
                     if (newSvg) oldSvg.replaceWith(newSvg);
                 }
             }
+        }
+    },
+
+    // حفظ في GitHub عبر الخادم
+    async saveToGitHub(svgId, svgCode) {
+        try {
+            const res = await fetch('/api/save-svg', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ svgId, svgCode })
+            });
+            if (res.ok) {
+                console.log('تم الحفظ في GitHub:', svgId);
+            }
+        } catch (e) {
+            // صامت - localStorage يعمل كنسخة احتياطية
+            console.log('حفظ GitHub غير متاح، محفوظ محلياً');
+        }
+    },
+
+    // تحميل من GitHub عند فتح التطبيق
+    async loadFromGitHub() {
+        try {
+            const res = await fetch('/api/load-svg');
+            if (!res.ok) return;
+            const data = await res.json();
+            for (const [svgId, svgCode] of Object.entries(data)) {
+                localStorage.setItem('svg-' + svgId, svgCode);
+            }
+            this.loadSaved();
+        } catch (e) {
+            // صامت - نستخدم localStorage المحلي
         }
     },
 
