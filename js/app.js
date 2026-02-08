@@ -203,7 +203,7 @@ const App = {
                         </div>
                         <div class="rule-box">
                             <div class="rule-title">تربيع عدد ينتهي بـ ٥</div>
-                            <div class="formula-card"><div class="formula">٢٥² = (٢ × ٣)٢٥ = ٦٢٥</div></div>
+                            <div class="formula-card"><div class="formula">٢٥<sup>٢</sup> = (٢ × ٣)٢٥ = ٦٢٥</div></div>
                             <p style="font-size: 0.9rem; margin-top: 0.5rem;">القاعدة: اضرب الرقم الأول في (نفسه + ١) ثم أضف ٢٥</p>
                         </div>
                         <div class="rule-box">
@@ -253,7 +253,7 @@ const App = {
                         <div class="formula-card"><div class="formula">√(أ × ب) = √أ × √ب</div></div>
                         <div class="formula-card"><div class="formula">√(أ / ب) = √أ / √ب</div></div>
                         <div class="formula-card"><div class="formula">أ^(١/ن) = ⁿ√أ</div></div>
-                        <div class="formula-card"><div class="formula">√أ² = |أ|</div></div>
+                        <div class="formula-card"><div class="formula">√أ<sup>٢</sup> = |أ|</div></div>
                     </div>
                 </div>
 
@@ -289,8 +289,8 @@ const App = {
                         </div>
                         <div class="rule-box">
                             <div class="rule-title">المعادلة التربيعية</div>
-                            <div class="formula-card"><div class="formula">أ س² + ب س + ﺟ = ٠</div></div>
-                            <div class="formula-card"><div class="formula">س = (−ب ± √(ب² − ٤أﺟ)) / ٢أ</div></div>
+                            <div class="formula-card"><div class="formula">أ س<sup>٢</sup> + ب س + ﺟ = ٠</div></div>
+                            <div class="formula-card"><div class="formula">س = (−ب ± √(ب<sup>٢</sup> − ٤أﺟ)) / ٢أ</div></div>
                         </div>
                     </div>
                 </div>
@@ -476,7 +476,7 @@ const App = {
 
                         <div class="rule-box">
                             <div class="rule-title">نظرية فيثاغورس (المثلث القائم)</div>
-                            <div class="formula-card"><div class="formula">أ² + ب² = ﺟ²   (ﺟ = الوتر)</div></div>
+                            <div class="formula-card"><div class="formula">أ<sup>٢</sup> + ب<sup>٢</sup> = ﺟ<sup>٢</sup>   (ﺟ = الوتر)</div></div>
                             <div class="svg-container" data-svg-id="pythagorean">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('pythagorean')">✏️</button>
                                 <svg viewBox="0 0 320 240" width="100%" style="max-width:320px;">
@@ -485,7 +485,7 @@ const App = {
                                     <text x="30" y="130" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="20" font-weight="bold">أ</text>
                                     <text x="138" y="215" fill="#d99335" font-family="Tajawal,Arial" font-size="20" font-weight="bold">ب</text>
                                     <text x="135" y="112" fill="#e74c3c" font-family="Tajawal,Arial" font-size="18" font-weight="bold">ﺟ (الوتر)</text>
-                                    <text x="80" y="235" fill="#2c3e50" font-family="Tajawal,Arial" font-size="14" font-weight="bold">أ² + ب² = ﺟ²</text>
+                                    <text x="80" y="235" fill="#2c3e50" font-family="Tajawal,Arial" font-size="14" font-weight="bold">أ<tspan baseline-shift="super" font-size="70%">٢</tspan> + ب<tspan baseline-shift="super" font-size="70%">٢</tspan> = ﺟ<tspan baseline-shift="super" font-size="70%">٢</tspan></text>
                                 </svg>
                             </div>
                             <p style="font-size:0.9rem;margin-top:0.5rem;">المثلثات الشهيرة: (٣، ٤، ٥) | (٥، ١٢، ١٣) | (٨، ١٥، ١٧) | (٧، ٢٤، ٢٥)</p>
@@ -538,7 +538,7 @@ const App = {
                         <div class="rule-box">
                             <div class="rule-title">المثلث متساوي الأضلاع</div>
                             <div class="formula-card"><div class="formula">جميع الأضلاع متساوية، جميع الزوايا = ٦٠°</div></div>
-                            <div class="formula-card"><div class="formula">المساحة = (ل² × √٣) ÷ ٤</div></div>
+                            <div class="formula-card"><div class="formula">المساحة = (ل<sup>٢</sup> × √٣) ÷ ٤</div></div>
                         </div>
 
                         <div class="rule-box">
@@ -571,7 +571,7 @@ const App = {
                     <div class="card-body">
                         <div class="rule-box">
                             <div class="rule-title">مساحة الدائرة</div>
-                            <div class="formula-card"><div class="formula">المساحة = ط × نق²</div></div>
+                            <div class="formula-card"><div class="formula">المساحة = ط × نق<sup>٢</sup></div></div>
                             <div class="svg-container" data-svg-id="circle-area">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('circle-area')">✏️</button>
                                 <svg viewBox="0 0 300 240" width="100%" style="max-width:300px;">
@@ -581,7 +581,7 @@ const App = {
                                     <circle cx="235" cy="120" r="5" fill="#e74c3c"/>
                                     <text x="185" y="112" fill="#e74c3c" font-family="Tajawal,Arial" font-size="18" font-weight="bold">نق</text>
                                     <text x="138" y="125" fill="#2c3e50" font-family="Tajawal,Arial" font-size="14" font-weight="bold">م</text>
-                                    <text x="85" y="230" fill="#2c3e50" font-family="Tajawal,Arial" font-size="15" font-weight="bold">م = ط × نق²   (ط ≈ ٣٫١٤)</text>
+                                    <text x="85" y="230" fill="#2c3e50" font-family="Tajawal,Arial" font-size="15" font-weight="bold">م = ط × نق<tspan baseline-shift="super" font-size="70%">٢</tspan>   (ط ≈ ٣٫١٤)</text>
                                 </svg>
                             </div>
                         </div>
@@ -608,7 +608,7 @@ const App = {
 
                         <div class="rule-box">
                             <div class="rule-title">القطاع الدائري وطول القوس</div>
-                            <div class="formula-card"><div class="formula">مساحة القطاع = (الزاوية / ٣٦٠) × ط × نق²</div></div>
+                            <div class="formula-card"><div class="formula">مساحة القطاع = (الزاوية / ٣٦٠) × ط × نق<sup>٢</sup></div></div>
                             <div class="formula-card"><div class="formula">طول القوس = (الزاوية / ٣٦٠) × ٢ × ط × نق</div></div>
                             <div class="svg-container" data-svg-id="sector-arc">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('sector-arc')">✏️</button>
@@ -619,7 +619,7 @@ const App = {
                                     <path d="M 175 130 A 25 25 0 0 0 172 116" fill="none" stroke="#d99335" stroke-width="2.5"/>
                                     <text x="180" y="125" fill="#d99335" font-family="Tajawal,Arial" font-size="14" font-weight="bold">هـ°</text>
                                     <text x="195" y="100" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="14" font-weight="bold">نق</text>
-                                    <text x="50" y="250" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">م = (هـ / ٣٦٠) × ط × نق²</text>
+                                    <text x="50" y="250" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">م = (هـ / ٣٦٠) × ط × نق<tspan baseline-shift="super" font-size="70%">٢</tspan></text>
                                 </svg>
                             </div>
                         </div>
@@ -648,7 +648,7 @@ const App = {
                     <div class="card-body">
                         <div class="rule-box">
                             <div class="rule-title">المربع</div>
-                            <div class="formula-card"><div class="formula">المساحة = ل²  |  المحيط = ٤ل  |  القطر = ل√٢</div></div>
+                            <div class="formula-card"><div class="formula">المساحة = ل<sup>٢</sup>  |  المحيط = ٤ل  |  القطر = ل√٢</div></div>
                             <div class="svg-container" data-svg-id="square">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('square')">✏️</button>
                                 <svg viewBox="0 0 280 260" width="100%" style="max-width:280px;">
@@ -658,7 +658,7 @@ const App = {
                                     <text x="130" y="42" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="18" font-weight="bold">ل</text>
                                     <text x="230" y="138" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="18" font-weight="bold">ل</text>
                                     <text x="135" y="120" fill="#e74c3c" font-family="Tajawal,Arial" font-size="14" font-weight="bold">ل√٢</text>
-                                    <text x="72" y="248" fill="#2c3e50" font-family="Tajawal,Arial" font-size="14" font-weight="bold">م = ل²، ح = ٤ل</text>
+                                    <text x="72" y="248" fill="#2c3e50" font-family="Tajawal,Arial" font-size="14" font-weight="bold">م = ل<tspan baseline-shift="super" font-size="70%">٢</tspan>، ح = ٤ل</text>
                                 </svg>
                             </div>
                         </div>
@@ -750,8 +750,8 @@ const App = {
                     <div class="card-body">
                         <div class="rule-box">
                             <div class="rule-title">المكعب (ل = طول الضلع)</div>
-                            <div class="formula-card"><div class="formula">الحجم = ل³</div></div>
-                            <div class="formula-card"><div class="formula">المساحة الكلية = ٦ل²</div></div>
+                            <div class="formula-card"><div class="formula">الحجم = ل<sup>٣</sup></div></div>
+                            <div class="formula-card"><div class="formula">المساحة الكلية = ٦ل<sup>٢</sup></div></div>
                             <div class="svg-container" data-svg-id="cube">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('cube')">✏️</button>
                                 <svg viewBox="0 0 260 260" width="100%" style="max-width:260px;">
@@ -764,7 +764,7 @@ const App = {
                                     <line x1="50" y1="180" x2="140" y2="220" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4,3"/>
                                     <line x1="220" y1="180" x2="140" y2="220" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4,3"/>
                                     <text x="25" y="130" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="16" font-weight="bold">ل</text>
-                                    <text x="80" y="255" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ل³</text>
+                                    <text x="80" y="255" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ل<tspan baseline-shift="super" font-size="70%">٣</tspan></text>
                                 </svg>
                             </div>
                         </div>
@@ -775,7 +775,7 @@ const App = {
                         </div>
                         <div class="rule-box">
                             <div class="rule-title">الأسطوانة</div>
-                            <div class="formula-card"><div class="formula">الحجم = ط × نق² × ع</div></div>
+                            <div class="formula-card"><div class="formula">الحجم = ط × نق<sup>٢</sup> × ع</div></div>
                             <div class="formula-card"><div class="formula">المساحة الجانبية = ٢ × ط × نق × ع</div></div>
                             <div class="svg-container" data-svg-id="cylinder">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('cylinder')">✏️</button>
@@ -788,14 +788,14 @@ const App = {
                                     <circle cx="130" cy="60" r="4" fill="#2c3e50"/>
                                     <text x="160" y="52" fill="#e74c3c" font-family="Tajawal,Arial" font-size="14" font-weight="bold">نق</text>
                                     <text x="218" y="140" fill="#f5ab4a" font-family="Tajawal,Arial" font-size="14" font-weight="bold">ع</text>
-                                    <text x="55" y="270" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ط × نق² × ع</text>
+                                    <text x="55" y="270" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ط × نق<tspan baseline-shift="super" font-size="70%">٢</tspan> × ع</text>
                                 </svg>
                             </div>
                         </div>
                         <div class="rule-box">
                             <div class="rule-title">الكرة</div>
-                            <div class="formula-card"><div class="formula">الحجم = ٤/٣ × ط × نق³</div></div>
-                            <div class="formula-card"><div class="formula">المساحة = ٤ × ط × نق²</div></div>
+                            <div class="formula-card"><div class="formula">الحجم = ٤/٣ × ط × نق<sup>٣</sup></div></div>
+                            <div class="formula-card"><div class="formula">المساحة = ٤ × ط × نق<sup>٢</sup></div></div>
                             <div class="svg-container" data-svg-id="sphere">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('sphere')">✏️</button>
                                 <svg viewBox="0 0 260 260" width="100%" style="max-width:260px;">
@@ -805,13 +805,13 @@ const App = {
                                     <line x1="130" y1="130" x2="225" y2="130" stroke="#e74c3c" stroke-width="2.5"/>
                                     <circle cx="225" cy="130" r="4" fill="#e74c3c"/>
                                     <text x="170" y="122" fill="#e74c3c" font-family="Tajawal,Arial" font-size="15" font-weight="bold">نق</text>
-                                    <text x="55" y="252" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ٤/٣ × ط × نق³</text>
+                                    <text x="55" y="252" fill="#2c3e50" font-family="Tajawal,Arial" font-size="13" font-weight="bold">ح = ٤/٣ × ط × نق<tspan baseline-shift="super" font-size="70%">٣</tspan></text>
                                 </svg>
                             </div>
                         </div>
                         <div class="rule-box">
                             <div class="rule-title">المخروط</div>
-                            <div class="formula-card"><div class="formula">الحجم = ١/٣ × ط × نق² × ع</div></div>
+                            <div class="formula-card"><div class="formula">الحجم = ١/٣ × ط × نق<sup>٢</sup> × ع</div></div>
                             <div class="formula-card"><div class="formula">المساحة الجانبية = ط × نق × ل</div></div>
                             <p style="font-size:0.9rem;">ل = طول المائل (المولّد)</p>
                         </div>
@@ -831,7 +831,7 @@ const App = {
                     <div class="card-body">
                         <div class="rule-box">
                             <div class="rule-title">المسافة بين نقطتين</div>
-                            <div class="formula-card"><div class="formula">المسافة = √[(س٢−س١)² + (ص٢−ص١)²]</div></div>
+                            <div class="formula-card"><div class="formula">المسافة = √[(س٢−س١)<sup>٢</sup> + (ص٢−ص١)<sup>٢</sup>]</div></div>
                             <div class="svg-container" data-svg-id="distance-formula">
                                 <button class="svg-edit-btn" onclick="SvgEditor.open('distance-formula')">✏️</button>
                                 <svg viewBox="0 0 300 280" width="100%" style="max-width:300px;">
@@ -910,13 +910,13 @@ const App = {
                         <button class="bookmark-btn" onclick="event.stopPropagation(); Bookmarks.toggle('a1')" data-id="a1">☆</button>
                     </div>
                     <div class="card-body">
-                        <div class="formula-card"><div class="formula">(أ + ب)² = أ² + ٢أب + ب²</div></div>
-                        <div class="formula-card"><div class="formula">(أ − ب)² = أ² − ٢أب + ب²</div></div>
-                        <div class="formula-card"><div class="formula">(أ + ب)(أ − ب) = أ² − ب²</div></div>
-                        <div class="formula-card"><div class="formula">(أ + ب)³ = أ³ + ٣أ²ب + ٣أب² + ب³</div></div>
-                        <div class="formula-card"><div class="formula">(أ − ب)³ = أ³ − ٣أ²ب + ٣أب² − ب³</div></div>
-                        <div class="formula-card"><div class="formula">أ³ + ب³ = (أ + ب)(أ² − أب + ب²)</div></div>
-                        <div class="formula-card"><div class="formula">أ³ − ب³ = (أ − ب)(أ² + أب + ب²)</div></div>
+                        <div class="formula-card"><div class="formula">(أ + ب)<sup>٢</sup> = أ<sup>٢</sup> + ٢أب + ب<sup>٢</sup></div></div>
+                        <div class="formula-card"><div class="formula">(أ − ب)<sup>٢</sup> = أ<sup>٢</sup> − ٢أب + ب<sup>٢</sup></div></div>
+                        <div class="formula-card"><div class="formula">(أ + ب)(أ − ب) = أ<sup>٢</sup> − ب<sup>٢</sup></div></div>
+                        <div class="formula-card"><div class="formula">(أ + ب)<sup>٣</sup> = أ<sup>٣</sup> + ٣أ<sup>٢</sup>ب + ٣أب<sup>٢</sup> + ب<sup>٣</sup></div></div>
+                        <div class="formula-card"><div class="formula">(أ − ب)<sup>٣</sup> = أ<sup>٣</sup> − ٣أ<sup>٢</sup>ب + ٣أب<sup>٢</sup> − ب<sup>٣</sup></div></div>
+                        <div class="formula-card"><div class="formula">أ<sup>٣</sup> + ب<sup>٣</sup> = (أ + ب)(أ<sup>٢</sup> − أب + ب<sup>٢</sup>)</div></div>
+                        <div class="formula-card"><div class="formula">أ<sup>٣</sup> − ب<sup>٣</sup> = (أ − ب)(أ<sup>٢</sup> + أب + ب<sup>٢</sup>)</div></div>
                     </div>
                 </div>
 
@@ -928,9 +928,9 @@ const App = {
                     <div class="card-body">
                         <div class="rule-content"><ul>
                             <li>إخراج العامل المشترك الأكبر</li>
-                            <li>الفرق بين مربعين: أ² − ب² = (أ+ب)(أ−ب)</li>
+                            <li>الفرق بين مربعين: أ<sup>٢</sup> − ب<sup>٢</sup> = (أ+ب)(أ−ب)</li>
                             <li>مجموع وفرق المكعبين</li>
-                            <li>تحليل ثلاثي الحدود: س² + (أ+ب)س + أب = (س+أ)(س+ب)</li>
+                            <li>تحليل ثلاثي الحدود: س<sup>٢</sup> + (أ+ب)س + أب = (س+أ)(س+ب)</li>
                         </ul></div>
                     </div>
                 </div>
