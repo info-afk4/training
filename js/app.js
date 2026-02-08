@@ -1110,7 +1110,7 @@ const App = {
             </div>`;
     },
 
-    setupSectionInteractions() { Bookmarks.updateAllButtons(); },
+    setupSectionInteractions() { Bookmarks.updateAllButtons(); SvgEditor.loadSaved(); },
     toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); },
     closeSidebar() { document.getElementById('sidebar').classList.remove('active'); document.getElementById('overlay').classList.remove('active'); },
     toggleDarkMode() {
@@ -1447,6 +1447,20 @@ const SvgEditor = {
         const code = svg.outerHTML;
         const editor = document.getElementById('svgCodeEditor');
         if (editor) editor.value = code;
+        // حفظ تلقائي عند كل تعديل
+        if (this.currentId) {
+            localStorage.setItem('svg-' + this.currentId, code);
+            const container = document.querySelector(`[data-svg-id="${this.currentId}"]`);
+            if (container) {
+                const oldSvg = container.querySelector('svg');
+                if (oldSvg) {
+                    const temp = document.createElement('div');
+                    temp.innerHTML = code;
+                    const newSvg = temp.querySelector('svg');
+                    if (newSvg) oldSvg.replaceWith(newSvg);
+                }
+            }
+        }
     },
 
     syncFromCode() {
