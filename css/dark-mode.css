@@ -281,6 +281,95 @@ tr:nth-child(even) {
     color: white;
 }
 
+/* SVG Editor - Dark Mode */
+.svg-edit-btn {
+    background: var(--primary-dark);
+    border-color: var(--dark-border);
+}
+
+.svg-editor-modal {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.svg-editor-content {
+    background: var(--dark-bg);
+}
+
+.svg-editor-header {
+    background: linear-gradient(135deg, var(--primary-dark), #c17a1f);
+}
+
+.svg-editor-preview {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+}
+
+.svg-visual-controls {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+}
+
+.svg-element-chip {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.svg-element-chip.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.svg-property-panel {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+}
+
+.svg-prop-slider {
+    background: var(--dark-border);
+}
+
+.svg-prop-value {
+    color: var(--dark-text);
+}
+
+.svg-prop-text-input {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.svg-add-btn {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.svg-add-btn:hover {
+    background: rgba(245, 171, 74, 0.2);
+    border-color: var(--primary);
+}
+
+.svg-code-toggle {
+    color: var(--dark-text-secondary);
+}
+
+.svg-editor-code {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.svg-editor-footer {
+    border-top-color: var(--dark-border);
+}
+
+.svg-editor-btn.close {
+    background: var(--dark-border);
+    color: var(--dark-text);
+}
+
 /* Focus outline */
 button:focus-visible,
 a:focus-visible,

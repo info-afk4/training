@@ -202,6 +202,63 @@
     }
 }
 
+/* SVG Editor - Mobile */
+@media (max-width: 768px) {
+    .svg-editor-content {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+        height: 100vh;
+    }
+
+    .svg-editor-body {
+        padding: 0.75rem;
+    }
+
+    .svg-editor-preview {
+        min-height: 140px;
+    }
+
+    .svg-editor-code {
+        min-height: 120px;
+        font-size: 0.75rem;
+    }
+
+    .svg-editor-footer {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .svg-editor-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .svg-prop-row {
+        flex-wrap: wrap;
+    }
+
+    .svg-prop-label {
+        min-width: 40px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .svg-editor-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .svg-elements-list {
+        gap: 0.3rem;
+    }
+
+    .svg-element-chip {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
 /* Touch-friendly adjustments */
 @media (hover: none) and (pointer: coarse) {
     .card:hover {

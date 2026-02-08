@@ -578,6 +578,416 @@ body {
     pointer-events: auto;
 }
 
+/* ==================== SVG Edit Button ==================== */
+.svg-container {
+    position: relative;
+}
+
+.svg-edit-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    z-index: 10;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+.svg-edit-btn:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* ==================== SVG Editor Modal ==================== */
+.svg-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.svg-editor-content {
+    background: var(--bg);
+    border-radius: 16px;
+    width: 95vw;
+    max-width: 900px;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.svg-editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.svg-editor-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.svg-editor-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.svg-editor-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.svg-editor-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.svg-editor-preview {
+    min-height: 180px;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.svg-editor-preview svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Visual Controls Panel */
+.svg-visual-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+}
+
+.svg-visual-controls h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.svg-elements-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.svg-element-chip {
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.svg-element-chip:hover {
+    border-color: var(--primary);
+}
+
+.svg-element-chip.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.svg-element-chip .chip-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Property Inspector */
+.svg-property-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+}
+
+.svg-property-panel.active {
+    display: flex;
+}
+
+.svg-prop-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.svg-prop-label {
+    min-width: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.svg-prop-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    outline: none;
+}
+
+.svg-prop-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px var(--shadow);
+}
+
+.svg-prop-value {
+    min-width: 35px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    font-family: monospace;
+}
+
+.svg-prop-color {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.svg-prop-text-input {
+    flex: 1;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    direction: rtl;
+}
+
+/* Element Add/Delete Buttons */
+.svg-controls-actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.svg-add-btn {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.svg-add-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+.svg-delete-btn {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #e74c3c;
+    background: white;
+    color: #e74c3c;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.svg-delete-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Code Toggle */
+.svg-code-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border: none;
+    background: none;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.svg-code-toggle:hover {
+    color: var(--primary);
+}
+
+.svg-editor-code-wrapper {
+    display: none;
+}
+
+.svg-editor-code-wrapper.visible {
+    display: block;
+}
+
+.svg-editor-code {
+    width: 100%;
+    min-height: 180px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem;
+    resize: vertical;
+    direction: ltr;
+    text-align: left;
+    background: var(--bg-secondary);
+    color: var(--text);
+}
+
+.svg-editor-footer {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.svg-editor-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.svg-editor-btn:active {
+    transform: scale(0.95);
+}
+
+.svg-editor-btn.save {
+    background: var(--success);
+    color: white;
+}
+
+.svg-editor-btn.save:hover {
+    background: #219a52;
+}
+
+.svg-editor-btn.preview {
+    background: var(--primary);
+    color: white;
+}
+
+.svg-editor-btn.preview:hover {
+    background: var(--primary-dark);
+}
+
+.svg-editor-btn.reset {
+    background: #e74c3c;
+    color: white;
+}
+
+.svg-editor-btn.reset:hover {
+    background: #c0392b;
+}
+
+.svg-editor-btn.close {
+    background: var(--border);
+    color: var(--text);
+}
+
+.svg-editor-btn.close:hover {
+    background: #ccc;
+}
+
+/* Drag Handles Overlay */
+.svg-drag-handle {
+    cursor: grab;
+    transition: r 0.15s;
+}
+
+.svg-drag-handle:hover {
+    r: 8;
+}
+
+.svg-drag-handle:active {
+    cursor: grabbing;
+}
+
+.svg-element-highlight {
+    pointer-events: none;
+}
+
 /* ==================== Utilities ==================== */
 .text-center { text-align: center; }
 .mt-1 { margin-top: 0.5rem; }

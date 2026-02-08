@@ -1,5 +1,5 @@
 // Service Worker for Qudrat App
-const CACHE_NAME = 'qudrat-app-v1.0.0';
+const CACHE_NAME = 'qudrat-app-v1.1.0';
 const urlsToCache = [
     '/index.html',
     '/css/style.css',
